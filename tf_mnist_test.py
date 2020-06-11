@@ -1,8 +1,12 @@
+import os
+##### set specific gpu #####
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
+os.environ["CUDA_VISIBLE_DEVICES"]="1"
+
 import tensorflow as tf
 import tensorflow.nn as nn
 import tensorflow.keras as k
 import numpy as np
-import os
 from tqdm import tqdm
 
 class TestModel(tf.Module):
